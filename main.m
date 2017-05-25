@@ -9,9 +9,9 @@ e a quantidade de pontos a serem desenhados. Desenha
 a função nos pontos pedidos.
 #}
 
-function main (f, fx, fy, fxy, Px, Py, type)
-  Nx = 2;
-  Ny = 2;
+function main (f, fx, fy, fxy, Px, Py)
+  Nx = 11;
+  Ny = 11;
   Ax = 0;
   Ay = 0;
   Bx = 2;
@@ -38,27 +38,17 @@ function main (f, fx, fy, fxy, Px, Py, type)
     end
   end
   
-  A = constroiv (Nx, Ny, Ax, Ay, Bx, By, M, type);
-  
-  Qx = (Bx - Ax) / (Px - 1);
-  Qy = (By - Ay) / (Py - 1);
+  L = constroiv (Nx, Ny, Ax, Ay, Bx, By, M, 0);
+  C = constroiv (Nx, Ny, Ax, Ay, Bx, By, M, 1);
 
-  erro = -1;
-  
-  for i = 1 : Px
-    for j = 1 : Py
-      x = (i - 1) * Qx + Ax;
-      y = (j - 1) * Qy + Ay;
-      ret = avaliav (x, y, A, Nx, Ny, Ax, Ay, Bx, By, type);
-      x
-      y
-      ret
-      f(x,y)
-      printf("\n");
-      erro = max(erro, abs(ret - f(x, y)));
-    end
-  end
-  
-  erro
+  draw (Px, Py, L, Nx, Ny, Ax, Ay, Bx, By, 0, f);
+  draw (Px, Py, C, Nx, Ny, Ax, Ay, Bx, By, 1, f);
+
+  printf("Erro Bilinear\n");
+
+  CalcErro(f, L, Nx, Ny, Ax, Ay, Bx, By, 0,1)
+
+  printf("\n\nErro bicúbico\n");
+  CalcErro(f, C, Nx, Ny, Ax, Ay, Bx, By, 1,1)
   
 end

@@ -30,13 +30,8 @@ function ret = avaliav (x, y, A, Nx, Ny, Ax, Ay, Bx, By, type)
 
   I = max(I, 0);
   J = max(J, 0);
-
-  x
-  Xr = (x - (Ax + I * Hx)) / Hx
-  printf("\n");
-  y
-  Yr = (y - (Ay + J * Hy)) / Hy
-  printf("\n\n");
+  Xr = (x - (Ax + I * Hx)) / Hx;
+  Yr = (y - (Ay + J * Hy)) / Hy;
 
   if (type != 0)
     X = [1 Xr Xr ^ 2 Xr ^ 3];
