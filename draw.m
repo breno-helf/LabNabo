@@ -17,7 +17,7 @@ function draw (Qx, Qy, Nx, Ny, Ax, Ay, Bx, By, M, type)
   
   for i = 1 : Qx
     for j = 1 : Qy
-      val = avaliav (Ax + i * Hx, Ay + j * Hy);
+      val = avaliav (Ax + (i - 1) * Hx, Ay + (j - 1) * Hy);
       img(i, j) = val;
     end
   end

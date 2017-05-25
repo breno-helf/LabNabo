@@ -7,35 +7,48 @@ função que recebe as coordenadas x e y de um ponto (x, y)
 em [Ax, Bx] x [Ay, By] e devolve v(x, y)
 #}
 
-function avaliav (x, y)
-  Hx = (Bx - Ax) / Nx;
-  Hy = (By - Ay) / Ny;
+function ret = avaliav (x, y, A, Nx, Ny, Ax, Ay, Bx, By, type)
+  Hx = (Bx - Ax) / (Nx - 1);
+  Hy = (By - Ay) / (Ny - 1);
 
-  I = -1;
-  J = -1;
+  I = -2;
+  J = -2;
   
-  for i = 0 : Nx
+  for i = 0 : Nx - 1
     if (x <= Ax + i * Hx)
       I = i - 1;
       break
     end
   end
-  for j = 0 : Ny
+
+  for j = 0 : Ny - 1 
     if (y <= Ay + j * Hy)
       J = j - 1;
       break
     end
   end
 
-  Xr = (x - Ax + I * Hx);
-  Yr = (y - Ay + J * Hy);
-  
-  X = [1 Xr Xr ^ 2 Xr ^ 3];
-  Y = [1
-       Yr
-       Yr ^ 2
-       Yr ^ 3];
-  
-  ret = X * A * Y;
-  
+  I = max(I, 0);
+  J = max(J, 0);
+
+  x
+  Xr = (x - (Ax + I * Hx)) / Hx
+  printf("\n");
+  y
+  Yr = (y - (Ay + J * Hy)) / Hy
+  printf("\n\n");
+
+  if (type != 0)
+    X = [1 Xr Xr ^ 2 Xr ^ 3];
+    Y = [1
+	 Yr
+	 Yr ^ 2
+	 Yr ^ 3];
+  else
+    X = [1 Xr];
+    Y = [1
+	 Yr];
+  end
+
+  ret = X * cell2mat(A(I + 1, J + 1)) * Y;
 end
