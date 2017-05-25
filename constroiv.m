@@ -43,17 +43,15 @@ function ret = constroiv (Nx, Ny, Ax, Ay, Bx, By, M, type)
 	     M(i + 1, j, 2) M(i + 1, j + 1, 2) M(i + 1, j, 4) M(i + 1, j + 1, 4)];
 
 	Bx = [1 0 0 0
-	     0 0 1 0
-	     -3/Hx^2 3/Hx^2 -2/Hx -1/Hx
-	     2/Hx^3 -2/Hx^3 1/Hx^2 1/Hx^2];
-	
+	     1 1 1 1
+	     0 1/Hx 0 0
+	     0 1/Hx 2/Hx 3/Hx];
 	By = [1 0 0 0
-	     0 0 1 0
-	     -3/Hy^2 3/Hy^2 -2/Hy -1/Hy
-	     2/Hy^3 -2/Hy^3 1/Hy^2 1/Hy^2];
+	     1 1 1 1
+	     0 1/Hy 0 0
+	     0 1/Hy 2/Hy 3/Hy];
 
-	
-	C = Bx * S * transpose(By);
+	C = inv(Bx) * S * inv(transpose(By));
 
 	ret(i, j) = C;
       end
