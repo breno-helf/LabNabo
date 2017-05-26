@@ -2,24 +2,14 @@
 Tiago Martins Napoli - 9345384
 Breno Helfstein Moura - 9790972
 
-draw
-
-Função que recebe os parametros do constroiv
-e a quantidade de pontos a serem desenhados. Desenha
-a função nos pontos pedidos.
 #}
 
-function main (f, fx, fy, fxy, Px, Py)
-  Nx = 11;
-  Ny = 11;
-  Ax = 0;
-  Ay = 0;
-  Bx = 2;
-  By = 2;
+function MaxErroMain (f, fx, fy, fxy, Nx, Ny, Ax, Bx, Ay, By)
 
   Hx = (Bx - Ax) / (Nx - 1);
   Hy = (By - Ay) / (Ny - 1);
-  
+  PASSO = 0.1
+
   M = reshape (1:(Nx * Ny * 4), Nx, Ny, 4);
 
   for k = 1 : 4
@@ -37,18 +27,21 @@ function main (f, fx, fy, fxy, Px, Py)
       end
     end
   end
-  
+
   L = constroiv (Nx, Ny, Ax, Ay, Bx, By, M, 0);
   C = constroiv (Nx, Ny, Ax, Ay, Bx, By, M, 1);
+  printf("Erro Bilinear %f\n", CalcErro(f, L, Nx, Ny, Ax, Ay, Bx, By, 0,1));
+  printf("Erro bicúbico %f\n", CalcErro(f, C, Nx, Ny, Ax, Ay, Bx, By, 1,1));
+end
 
-  draw (Px, Py, L, Nx, Ny, Ax, Ay, Bx, By, 0, f);
-  draw (Px, Py, C, Nx, Ny, Ax, Ay, Bx, By, 1, f);
-
-  printf("Erro Bilinear\n");
-
-  CalcErro(f, L, Nx, Ny, Ax, Ay, Bx, By, 0,1)
-
-  printf("\n\nErro bicúbico\n");
-  CalcErro(f, C, Nx, Ny, Ax, Ay, Bx, By, 1,1)
-  
+function erro = CalcErro (f, A, Nx, Ny, Ax, Ay, Bx, By, type, PASSO)
+  erro = -1;
+  for i = Ax : PASSO : Bx
+    for j = Ay : PASSO: By
+      x = i;
+      y = j;
+      ret = avaliav (x, y, A, Nx, Ny, Ax, Ay, Bx, By, type);
+      erro = max(erro, abs(ret - f(x, y)));
+    end
+  end
 end
