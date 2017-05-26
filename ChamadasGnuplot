@@ -1,0 +1,33 @@
+set title "Bicubica: x^5 + y^5 + xy"
+set isosamples 21,21
+set xrange [0:2]
+set yrange [0:2]
+set hidden3d
+splot "bicubic.txt" u 1:2:3 title "Original", "bicubic.txt" u 1:2:4 title "Interpolado"
+
+set title "Bicubica: x^5 + y^5 + xy"
+set ticslevel 0
+set isosamples 21,21
+set xrange [0:2]
+set yrange [0:2]
+set hidden3d
+splot "bicubic.txt" u 1:2:5 title "Erro"
+
+set title "Bilinear: x^5 + y^5 + xy"
+set ticslevel 0
+set isosamples 21,21
+set xrange [0:2]
+set yrange [0:2]
+set hidden3d
+splot "bilinear.txt" u 1:2:5 title "Erro"
+
+set title "Bilinear: x^5 + y^5 + xy"
+set isosamples 21,21
+set xrange [0:2]
+set yrange [0:2]
+set hidden3d
+splot "bilinear.txt" u 1:2:3 title "Original", "bilinear.txt" u 1:2:4 title "Interpolado"
+
+
+
+

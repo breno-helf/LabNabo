@@ -1,17 +1,31 @@
-.Desenha 255*sin(x)  (512x512 pixels) malha interpolada 5x5, dominio [0,2]x[0,2]: 
-DrawMain(@(x,y)255*sin(x), @(x,y)255*cos(x), @(x,y)0, @(x,y)0, 512, 512, 5, 5, 0, 2, 0, 2)
 
-É possivel que dê um problema com GraphicsMagick, nesse caso, criar imagens com menos pixels, depois criar com mais pixels
+.Desenha 255*sin(x)  (128x128 pixels) malha interpolada 5x5, dominio [0,10]x[0,10]: 
+DrawMain(@(x,y)255*sin(x), @(x,y)255*cos(x), @(x,y)0, @(x,y)0, 128, 128, 5, 5, 0, 10, 0, 10)
 
-.Desenha 128sin(x) + 128cos(x) (512x512), dominio [0,20]x[0,20], malha interpolada 11x11: 
-DrawMain(@(x,y)128*sin(x)+128*cos(y), @(x,y)128*cos(x), @(x,y)-128*sin(y), @(x,y)0, 512, 512, 11, 11, 0, 20, 0, 20)
+É possivel que dê um problema com GraphicsMagick, nesse caso, criar imagens com menos pixels, depois criar com mais pixels!
+
+.Desenha 128sin(x) + 128cos(x) (512x512), dominio [0,20]x[0,20], malha interpolada 10x10: 
+DrawMain(@(x,y)128*sin(x)+128*cos(y), @(x,y)128*cos(x), @(x,y)-128*sin(y), @(x,y)0, 512, 512, 10, 10, 0, 20, 0, 20)
 
 .Criar uma arquivo txt com varios dados: A primeira coluna é a coordenada X, a segunda a coordenada Y, a terceira o valor da função original, a quarta o valor calculado pelo polinômio interpolador e a quinta o valor do erro no ponto (X,Y). Depois basta usar algum programa para Plotar.
 
-128sin(x) + 128cos(x), PASSO = 0.1, pontos interpolados 5x5 
+.128sin(x) + 128cos(x), PASSO = 0.1, pontos interpolados 5x5 , dominio [0,2]x[0,2]
 DataMain(@(x,y)128*sin(x)+128*cos(y), @(x,y)128*cos(x), @(x,y)-128*sin(y), @(x,y)0, 5, 5, 0, 2, 0, 2)
 
-255*sin(x), PASSO = 0.1, pontos interpoldos 11x11, dominio [0,2]x[0,2]
-DataMain(@(x,y)255*sin(x), @(x,y)255*cos(x), @(x,y)0, @(x,y)0, 11, 11, 0, 2, 0, 2)
+.255*sin(x), PASSO = 0.1, pontos interpolados 10x10, dominio [0,2]x[0,2]
+DataMain(@(x,y)255*sin(x), @(x,y)255*cos(x), @(x,y)0, @(x,y)0, 10, 10, 0, 2, 0, 2)
 
+
+.x^5 + y^5 + xy, PASSO = 0.1, pontos interpolados 10x10, dominio [0,2]x[0,2]
+DataMain(@(x,y)x^5+y^5+x*y, @(x,y)5*x^4 + y, @(x,y)5*y^4 + x, @(x,y)1, 10, 10, 0, 2, 0, 2)
  
+
+.Gerar dados para experimentação do erro para a função x^5+y^5+x*y, dominio [0,5]x[0,5], Malha inicial 5x5
+ExperimentaErro(@(x,y)x^5+y^5+x*y, @(x,y)5*x^4 + y, @(x,y)5*y^4 + x, @(x,y)1, 6, 0, 5, 0, 5)
+
+.Gerar dados para experimentação do erro para a função 255*sin(x), dominio [0,5]x[0,5], Malha inicial 5x5
+ExperimentaErro(@(x,y)255*sin(x), @(x,y)255*cos(x), @(x,y)0, @(x,y)0, 6, 0, 5, 0, 5)
+
+
+
+

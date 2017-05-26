@@ -6,6 +6,8 @@ Breno Helfstein Moura - 9790972
 
 function DataMain (f, fx, fy, fxy, Nx, Ny, Ax, Bx, Ay, By)
 
+  Nx++;
+  Ny++;
   Hx = (Bx - Ax) / (Nx - 1);
   Hy = (By - Ay) / (Ny - 1);
   PASSO = 0.1
