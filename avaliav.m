@@ -13,6 +13,9 @@ function ret = avaliav (x, y, A, Nx, Ny, Ax, Ay, Bx, By, type)
 
   I = -2;
   J = -2;
+
+  # Os próximo loops procuram em qual subretangulo o ponto a ser
+  # Interpolado se encontra.
   
   for i = 0 : Nx - 1
     if (x <= Ax + i * Hx)

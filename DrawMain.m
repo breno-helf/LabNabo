@@ -2,6 +2,11 @@
 Tiago Martins Napoli - 9345384
 Breno Helfstein Moura - 9790972
 
+DrawMain
+
+Dado a função e a malha, faz um desenho da função original e
+das compressões com bilinear e bicúbico, como pedido no
+enunciado.
 
 #}
 
@@ -13,6 +18,8 @@ function DrawMain (f, fx, fy, fxy, Px, Py, Nx, Ny, Ax, Bx, Ay, By)
   
   M = reshape (1:(Nx * Ny * 4), Nx, Ny, 4);
 
+  # Monta a matriz de valores a serem passados para a constroiv
+  
   for k = 1 : 4
     for i = 1 : Nx
       for j = 1 : Ny		

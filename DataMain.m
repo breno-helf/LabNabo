@@ -2,6 +2,13 @@
 Tiago Martins Napoli - 9345384
 Breno Helfstein Moura - 9790972
 
+DataMain
+
+Dada a funcão e a malha, calcula os dados da interpolação
+para serem geradas as imagens com gnuplot posteriormente.
+Para gerar as imagens apenas rode o ChamadasGnuplot com
+gnulpot.
+
 #}
 
 function DataMain (f, fx, fy, fxy, Nx, Ny, Ax, Bx, Ay, By)
@@ -14,6 +21,8 @@ function DataMain (f, fx, fy, fxy, Nx, Ny, Ax, Bx, Ay, By)
   
   M = reshape (1:(Nx * Ny * 4), Nx, Ny, 4);
 
+  # Monta a matriz de valores a serem passados para a constroiv
+  
   for k = 1 : 4
     for i = 1 : Nx
       for j = 1 : Ny		

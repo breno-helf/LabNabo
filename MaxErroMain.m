@@ -2,6 +2,11 @@
 Tiago Martins Napoli - 9345384
 Breno Helfstein Moura - 9790972
 
+MaxErroMain
+
+Dada a função a ser interpolada e a malha, calcula o
+Erro Máximo das interpolações bilinear e bicúbica. 
+
 #}
 
 function [erroBilinear, erroBicubic] = MaxErroMain (f, fx, fy, fxy, Nx, Ny, Ax, Bx, Ay, By)
@@ -14,6 +19,8 @@ function [erroBilinear, erroBicubic] = MaxErroMain (f, fx, fy, fxy, Nx, Ny, Ax, 
 
   M = reshape (1:(Nx * Ny * 4), Nx, Ny, 4);
 
+  # Monta a matriz de valores a serem passados para a constroiv
+  
   for k = 1 : 4
     for i = 1 : Nx
       for j = 1 : Ny		
