@@ -7,6 +7,9 @@ DrawMain(@(x,y)255*sin(x), @(x,y)255*cos(x), @(x,y)0, @(x,y)0, 128, 128, 5, 5, 0
 .Desenha 128sin(x) + 128cos(x) (512x512), dominio [0,20]x[0,20], malha interpolada 10x10: 
 DrawMain(@(x,y)128*sin(x)+128*cos(y), @(x,y)128*cos(x), @(x,y)-128*sin(y), @(x,y)0, 512, 512, 10, 10, 0, 20, 0, 20)
 
+.Desenha 255*(x^5-3xy^3+y^3) (128x128), dominio [0,1]x[0,1], malha interpolada 5x5: 
+DrawMain(@(x,y)255*(x^5-x*y^3+y^3), @(x,y)255*(5*x^4-y^3), @(x,y)255*(-3*x*y^2+3*y^2), @(x,y)255*(-3*y^2), 128, 128, 5, 5, 0, 1, 0, 1)
+
 .Criar uma arquivo txt com varios dados: A primeira coluna é a coordenada X, a segunda a coordenada Y, a terceira o valor da função original, a quarta o valor calculado pelo polinômio interpolador e a quinta o valor do erro no ponto (X,Y). Depois basta usar algum programa para Plotar.
 
 .128sin(x) + 128cos(x), PASSO = 0.1, pontos interpolados 5x5 , dominio [0,2]x[0,2]
