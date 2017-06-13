@@ -10,7 +10,7 @@ enunciado.
 
 #}
 
-function DrawMain (f, fx, fy, fxy, Px, Py, Nx, Ny, Ax, Bx, Ay, By)
+function DrawMain (f, Px, Py, Nx, Ny, Ax, Bx, Ay, By)
   Nx++;
   Ny++;
   Hx = (Bx - Ax) / (Nx - 1);
