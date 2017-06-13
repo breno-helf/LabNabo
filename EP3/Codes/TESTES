@@ -1,0 +1,77 @@
+
+- Teste da função f(x, y) = x^5 + y^3 + (x^2) * y + (y^3) * x
+
+ErroAproxdf(@(x, y)x^5 + y ^ 3 + (x ^ 2) * y + (y ^ 3) * x, @(x, y)5 * x ^ 4 + 2 * x * y + y ^ 3, @(x, y)3 * y ^ 2 + x ^ 2 + 3 * (y ^ 2) * x, @(x, y)2 * x + 3 * y ^ 2, 100, 100, 0, 10, 0, 10)
+		 
+Malha interpolada 10x10 pontos
+Hx =  1
+Hy =  1
+Erro 811.000000
+10.000000
+1.000000
+
+Malha interpolada 20x20 pontos
+Hx =  0.50000
+Hy =  0.50000
+Erro 225.687500
+2.625000
+0.250000
+
+Malha interpolada 40x40 pontos
+Hx =  0.25000
+Hy =  0.25000
+Erro 59.417969
+0.671875
+0.062500
+
+Malha interpolada 80x80 pontos
+Hx =  0.12500
+Hy =  0.12500
+Erro 15.237061
+0.169922
+0.015625
+
+Malha interpolada 100x100 pontos
+Hx =  0.10000
+Hy =  0.10000
+Erro 9.801100
+0.109000
+0.010000
+
+- Teste da função g(x, y) = y * sin(x)
+ErroAproxdf(@(x, y)y * sin(x), @(x, y)y * cos(x), @(x, y)sin(x), @(x, y)cos(x), 100, 100, 0, 10, 0, 10)
+
+Malha interpolada 10x10 pontos
+Hx =  1
+Hy =  1
+Erro 1.412483
+0.000000
+0.156943
+
+Malha interpolada 20x20 pontos
+Hx =  0.50000
+Hy =  0.50000
+Erro 0.389809
+0.000000
+0.041033
+
+Malha interpolada 40x40 pontos
+Hx =  0.25000
+Hy =  0.25000
+Erro 0.101190
+0.000000
+0.010378
+
+Malha interpolada 80x80 pontos
+Hx =  0.12500
+Hy =  0.12500
+Erro 0.025693
+0.000000
+0.002602
+
+Malha interpolada 100x100 pontos
+Hx =  0.10000
+Hy =  0.10000
+Erro 0.016489
+0.000000
+0.001666
