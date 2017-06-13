@@ -1,0 +1,54 @@
+ MaxErroMain(@(x, y)x^5 + y ^ 3 + (x ^ 2) * y + (y ^ 3) * x, @(x, y)5 * x ^ 4 + 2 * x * y + y ^ 3, @(x, y)3 * y ^ 2 + x ^ 2 + 3 * (y ^ 2) * x, @(x, y)2 * x + 3 * y ^ 2, 10, 160, 0, 160, 0, 10)
+
+Malha interpolada 10x10 pontos
+Erro Bilinear 2223.593750
+Erro bicúbico 639.791360
+ans =  2223.6
+
+Malha interpolada 20x20 pontos
+Erro Bilinear 578.732220
+Erro bicúbico 149.790816
+ans =  578.73
+
+Malha interpolada 40x40 pontos
+Erro Bilinear 149.819019
+Erro bicúbico 112.456000
+ans =  149.82
+
+Malha interpolada 80x80 pontos
+Erro Bilinear 36.614005
+Erro bicúbico 230.459250
+ans =  36.614
+
+Malha interpolada 160x160 pontos
+Erro Bilinear 9.420995
+Erro bicúbico 461.301531
+ans =  9.4210
+
+ MaxErroMain(@(x, y)y * sin(x), @(x, y)y * cos(x), @(x, y)sin(x), @(x, y)cos(x), 160, 160, 0, 10, 0, 10)
+
+Malha interpolada 10x10 pontos
+Erro Bilinear 1.221108
+Erro bicúbico 35.252226
+ans =  1.2211
+
+Malha interpolada 20x20 pontos
+Erro Bilinear 0.298355
+Erro bicúbico 63.866113
+ans =  0.29835
+
+Malha interpolada 40x40 pontos
+Erro Bilinear 0.074869
+Erro bicúbico 120.389057
+ans =  0.074869
+
+Malha interpolada 80x80 pontos
+Erro Bilinear 0.018740
+Erro bicúbico 234.906528
+ans =  0.018740
+
+Malha interpolada 160x160 pontos
+Erro Bilinear 0.004686
+Erro bicúbico 464.005264
+ans =  0.0046856
+
