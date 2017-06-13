@@ -1,87 +1,39 @@
 - Teste da função f(x, y) = x^5 + y^3 + (x^2) * y + (y^3) * x
 
+	-Erro das derivadas
+ErroAproxdf(@(x, y)x^5 + y ^ 3 + (x ^ 2) * y + (y ^ 3) * x, @(x, y)5 * x ^ 4 + 2 * x * y + y ^ 3, @(x, y)3 * y ^ 2 + x ^ 2 + 3 * (y ^ 2) * x, @(x, y)2 * x + 3 * y ^ 2, 10, 10, 0, 10, 0, 10)
+ErroAproxdf(@(x, y)x^5 + y ^ 3 + (x ^ 2) * y + (y ^ 3) * x, @(x, y)5 * x ^ 4 + 2 * x * y + y ^ 3, @(x, y)3 * y ^ 2 + x ^ 2 + 3 * (y ^ 2) * x, @(x, y)2 * x + 3 * y ^ 2, 20, 20, 0, 10, 0, 10)
+ErroAproxdf(@(x, y)x^5 + y ^ 3 + (x ^ 2) * y + (y ^ 3) * x, @(x, y)5 * x ^ 4 + 2 * x * y + y ^ 3, @(x, y)3 * y ^ 2 + x ^ 2 + 3 * (y ^ 2) * x, @(x, y)2 * x + 3 * y ^ 2, 40, 40, 0, 10, 0, 10)
+ErroAproxdf(@(x, y)x^5 + y ^ 3 + (x ^ 2) * y + (y ^ 3) * x, @(x, y)5 * x ^ 4 + 2 * x * y + y ^ 3, @(x, y)3 * y ^ 2 + x ^ 2 + 3 * (y ^ 2) * x, @(x, y)2 * x + 3 * y ^ 2, 80, 80, 0, 10, 0, 10)
 ErroAproxdf(@(x, y)x^5 + y ^ 3 + (x ^ 2) * y + (y ^ 3) * x, @(x, y)5 * x ^ 4 + 2 * x * y + y ^ 3, @(x, y)3 * y ^ 2 + x ^ 2 + 3 * (y ^ 2) * x, @(x, y)2 * x + 3 * y ^ 2, 160, 160, 0, 10, 0, 10)
 
+	-Erro de Interpolação
 ExperimentaErro(@(x, y)x^5 + y ^ 3 + (x ^ 2) * y + (y ^ 3) * x, 5, 0, 5, 0, 5)
 
-		 
-Malha interpolada 10x10 pontos
-Hx =  1
-Hy =  1
-Erro 1714.000000
-22.000000
-2.000000
-
-Malha interpolada 20x20 pontos
-Hx =  0.50000
-Hy =  0.50000
-Erro 463.375000
-5.500000
-0.500000
-
-Malha interpolada 40x40 pontos
-Hx =  0.25000
-Hy =  0.25000
-Erro 120.367188
-1.375000
-0.125000
-
-Malha interpolada 80x80 pontos
-Hx =  0.12500
-Hy =  0.12500
-Erro 30.667480
-0.343750
-0.031250
-
-Malha interpolada 160x160 pontos
-Hx =  0.062500
-Hy =  0.062500
-Erro 7.739471
-0.085938
-0.007812
 
 - Teste da função g(x, y) = y * sin(x)
+
+	-Erro das derivadas
+ErroAproxdf(@(x, y)y * sin(x), @(x, y)y * cos(x), @(x, y)sin(x), @(x, y)cos(x), 10, 10, 0, 10, 0, 10)
+ErroAproxdf(@(x, y)y * sin(x), @(x, y)y * cos(x), @(x, y)sin(x), @(x, y)cos(x), 20, 20, 0, 10, 0, 10)
+ErroAproxdf(@(x, y)y * sin(x), @(x, y)y * cos(x), @(x, y)sin(x), @(x, y)cos(x), 40, 40, 0, 10, 0, 10)
+ErroAproxdf(@(x, y)y * sin(x), @(x, y)y * cos(x), @(x, y)sin(x), @(x, y)cos(x), 80, 80, 0, 10, 0, 10)
 ErroAproxdf(@(x, y)y * sin(x), @(x, y)y * cos(x), @(x, y)sin(x), @(x, y)cos(x), 160, 160, 0, 10, 0, 10)
 
-Malha interpolada 10x10 pontos
-Hx =  1
-Hy =  1
-Erro 3.065180
-0.000000
-0.306518
+	-Erro de Interpolação
+ExperimentaErro(@(x, y)y*sin(x), 5, 0, 5, 0, 5)
 
-Malha interpolada 20x20 pontos
-Hx =  0.50000
-Hy =  0.50000
-Erro 0.802688
-0.000000
-0.080269
 
-Malha interpolada 40x40 pontos
-Hx =  0.25000
-Hy =  0.25000
-Erro 0.203806
-0.000000
-0.020381
+- Testes da função g(x,y) = exp(x+y)
 
-Malha interpolada 80x80 pontos
-Hx =  0.12500
-Hy =  0.12500
-Erro 0.051799
-0.000000
-0.005180
-
-Malha interpolada 160x160 pontos
-Hx =  0.062500
-Hy =  0.062500
-Erro 0.013003
-0.000000
-0.001300
-
+	-Erro das derivadas
 ErroAproxdf(@(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), 5, 5, 0, 5, 0, 5)
 ErroAproxdf(@(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), 10, 10, 0, 5, 0, 5)
 ErroAproxdf(@(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), 20, 20, 0, 5, 0, 5)
 ErroAproxdf(@(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), 40, 40, 0, 5, 0, 5)
 ErroAproxdf(@(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), 80, 80, 0, 5, 0, 5)
+
+	-Erro de Interpolação
+ExperimentaErro(@(x, y)exp(x+y), 5, 0, 5, 0, 5)
 
 
