@@ -9,7 +9,7 @@ Erro Máximo das interpolações bilinear e bicúbica.
 
 #}
 
-function [erroBilinear, erroBicubic] = MaxErroMain (f, fx, fy, fxy, Nx, Ny, Ax, Bx, Ay, By)
+function [erroBilinear, erroBicubic] = MaxErroMain (f, Nx, Ny, Ax, Bx, Ay, By)
 
   Nx++;
   Ny++;
