@@ -15,7 +15,7 @@ function [erroBilinear, erroBicubic] = MaxErroMain (f, fx, fy, fxy, Nx, Ny, Ax, 
   Ny++;
   Hx = (Bx - Ax) / (Nx - 1);
   Hy = (By - Ay) / (Ny - 1);
-  PASSO = 0.1
+  PASSO = 0.1;
 
   M = reshape (1:(Nx * Ny * 4), Nx, Ny, 4);
   A = reshape (1:(Nx * Ny), Nx, Ny);
@@ -25,16 +25,36 @@ function [erroBilinear, erroBicubic] = MaxErroMain (f, fx, fy, fxy, Nx, Ny, Ax, 
     for j = 1 : Ny		
       M(i, j, 1) = f(Ax + (i - 1) * Hx, Ay + (j - 1) * Hy);
       A(i, j) = f(Ax + (i - 1) * Hx, Ay + (j - 1) * Hy);
+    end
+  end
+
+  [dfx, dfy, d2fxy] = aproxdf (Nx, Ny, Ax, Ay, Bx, By, A);
+  
+  for k = 1 : 3
+    for i = 1 : Nx
+      for j = 1 : Ny
+ 	x = Ax + (i - 1) * Hx;
+	y = Ay + (j - 1) * Hy;
+	
+	if (k == 1)
+	  M(i, j, k + 1) = dfx(i, j);
+
+	elseif (k == 2)
+	  M(i, j, k + 2) = dfy(i, j);
+	  
+	elseif (k == 3)
+	  M(i, j, k + 2) = d2fxy(i, j);
+	end
       end
     end
   end
-  
+
 
   L = constroiv (Nx, Ny, Ax, Ay, Bx, By, M, 0);
   C = constroiv (Nx, Ny, Ax, Ay, Bx, By, M, 1);
-  erroBicubic = CalcErro(f, C, Nx, Ny, Ax, Ay, Bx, By, 1,PASSO);
-  erroBilinear = CalcErro(f, L, Nx, Ny, Ax, Ay, Bx, By, 0,PASSO);
-  printf("Malha interpolada %dx%d pontos\n", Nx, Ny);
+  erroBicubic = CalcErro(f, C, Nx, Ny, Ax, Ay, Bx, By, 1, PASSO);
+  erroBilinear = CalcErro(f, L, Nx, Ny, Ax, Ay, Bx, By, 0, PASSO);
+  printf("Malha interpolada %dx%d pontos\n", Nx - 1, Ny - 1);
   printf("Erro Bilinear %f\n", erroBilinear);
   printf("Erro bicúbico %f\n", erroBicubic);
 end

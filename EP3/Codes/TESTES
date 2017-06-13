@@ -1,7 +1,7 @@
 
 - Teste da função f(x, y) = x^5 + y^3 + (x^2) * y + (y^3) * x
 
-ErroAproxdf(@(x, y)x^5 + y ^ 3 + (x ^ 2) * y + (y ^ 3) * x, @(x, y)5 * x ^ 4 + 2 * x * y + y ^ 3, @(x, y)3 * y ^ 2 + x ^ 2 + 3 * (y ^ 2) * x, @(x, y)2 * x + 3 * y ^ 2, 100, 100, 0, 10, 0, 10)
+ErroAproxdf(@(x, y)x^5 + y ^ 3 + (x ^ 2) * y + (y ^ 3) * x, @(x, y)5 * x ^ 4 + 2 * x * y + y ^ 3, @(x, y)3 * y ^ 2 + x ^ 2 + 3 * (y ^ 2) * x, @(x, y)2 * x + 3 * y ^ 2, 160, 160, 0, 10, 0, 10)
 		 
 Malha interpolada 10x10 pontos
 Hx =  1
@@ -31,15 +31,15 @@ Erro 30.667480
 0.343750
 0.031250
 
-Malha interpolada 100x100 pontos
-Hx =  0.10000
-Hy =  0.10000
-Erro 19.701400
-0.220000
-0.020000
+Malha interpolada 160x160 pontos
+Hx =  0.062500
+Hy =  0.062500
+Erro 7.739471
+0.085938
+0.007812
 
 - Teste da função g(x, y) = y * sin(x)
-ErroAproxdf(@(x, y)y * sin(x), @(x, y)y * cos(x), @(x, y)sin(x), @(x, y)cos(x), 100, 100, 0, 10, 0, 10)
+ErroAproxdf(@(x, y)y * sin(x), @(x, y)y * cos(x), @(x, y)sin(x), @(x, y)cos(x), 160, 160, 0, 10, 0, 10)
 
 Malha interpolada 10x10 pontos
 Hx =  1
@@ -69,9 +69,9 @@ Erro 0.051799
 0.000000
 0.005180
 
-Malha interpolada 100x100 pontos
-Hx =  0.10000
-Hy =  0.10000
-Erro 0.033217
+Malha interpolada 160x160 pontos
+Hx =  0.062500
+Hy =  0.062500
+Erro 0.013003
 0.000000
-0.003322
+0.001300
