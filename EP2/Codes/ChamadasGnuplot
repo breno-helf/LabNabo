@@ -28,6 +28,3 @@ set yrange [0:2]
 set hidden3d
 splot "bilinear.txt" u 1:2:3 title "Original", "bilinear.txt" u 1:2:4 title "Interpolado"
 
-
-
-

@@ -40,10 +40,10 @@ function [erroBilinear, erroBicubic] = MaxErroMain (f, fx, fy, fxy, Nx, Ny, Ax, 
 	  M(i, j, k + 1) = dfx(i, j);
 
 	elseif (k == 2)
-	  M(i, j, k + 2) = dfy(i, j);
+	  M(i, j, k + 1) = dfy(i, j);
 	  
 	elseif (k == 3)
-	  M(i, j, k + 2) = d2fxy(i, j);
+	  M(i, j, k + 1) = d2fxy(i, j);
 	end
       end
     end
