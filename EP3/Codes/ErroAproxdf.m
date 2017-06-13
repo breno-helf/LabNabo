@@ -26,7 +26,6 @@ function ErroAproxdf (f, fx, fy, fxy, Nx, Ny, Ax, Bx, Ay, By)
     end
   end
 
-  M;
   [dfx, dfy, d2fxy] = aproxdf (Nx, Ny, Ax, Ay, Bx, By, M);
 
   printf("Malha interpolada %dx%d pontos\n", Nx - 1, Ny - 1);
@@ -47,8 +46,8 @@ function [errox, erroy, erroxy] = CalcErro (fx, fy, fxy, dfx, dfy, d2fxy, Nx, Ny
   erroxy = -1;
   
   for k = 1 : 3
-    for i = 2 : Nx - 1
-      for j = 2 : Ny - 1
+    for i = 1 : Nx
+      for j = 1 : Ny
  	x = Ax + (i - 1) * Hx;
 	y = Ay + (j - 1) * Hy;
 	

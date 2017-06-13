@@ -28,7 +28,9 @@ function [erroBilinear, erroBicubic] = MaxErroMain (f, fx, fy, fxy, Nx, Ny, Ax, 
       end
     end
   end
-  
+
+  [dfx, dfy, d2fxy] = aproxdf (Nx, Ny, Ax, Ay, Bx, By, M);
+
 
   L = constroiv (Nx, Ny, Ax, Ay, Bx, By, M, 0);
   C = constroiv (Nx, Ny, Ax, Ay, Bx, By, M, 1);

@@ -58,7 +58,7 @@ function [dfx, dfy, d2fxy] = aproxdf (Nx, Ny, Ax, Ay, Bx, By, M)
 
   for i = 1 : Nx
     d2fxy(i, 1) = (-3 * dfx(i, 1) + 4 * dfx(i, 1 + 1) - dfx(i, 1 + 2)) / (2 * Hy);
-    d2fxy(i, Ny) = -(-dfx(i, Ny - 2) + 4 * dfx(i, Ny - 1) - 3 * dfx(i, Ny - 2)) / (2 * Hy);
+    d2fxy(i, Ny) = -(-dfx(i, Ny - 2) + 4 * dfx(i, Ny - 1) - 3 * dfx(i, Ny)) / (2 * Hy);
   end
   
 end
