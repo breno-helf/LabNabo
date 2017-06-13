@@ -1,0 +1,5 @@
+compress('card.jpg', 101, 101, 1)
+compress('card.jpg', 101, 101, 0)
+compress('card.jpg', 51, 101, 0)
+compress('card.jpg', 51, 101, 1)
+compress('card.jpg', 11, 11, 1)
