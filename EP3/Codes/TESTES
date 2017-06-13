@@ -77,3 +77,11 @@ Hy =  0.062500
 Erro 0.013003
 0.000000
 0.001300
+
+ErroAproxdf(@(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), 5, 5, 0, 5, 0, 5)
+ErroAproxdf(@(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), 10, 10, 0, 5, 0, 5)
+ErroAproxdf(@(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), 20, 20, 0, 5, 0, 5)
+ErroAproxdf(@(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), 40, 40, 0, 5, 0, 5)
+ErroAproxdf(@(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), 80, 80, 0, 5, 0, 5)
+
+
