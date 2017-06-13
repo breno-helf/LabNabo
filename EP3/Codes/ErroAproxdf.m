@@ -34,7 +34,7 @@ function ErroAproxdf (f, fx, fy, fxy, Nx, Ny, Ax, Bx, Ay, By)
   Hy
   
   [errox, erroy, erroxy] = CalcErro(fx, fy, fxy, dfx, dfy, d2fxy, Nx, Ny, Ax, Ay, Bx, By);
-  printf("Erro fx %f\nErro fy%f\nErro fxy%f\n", errox, erroy, erroxy);
+  printf("Erro fx %f\nErro fy %f\nErro fxy %f\n", errox, erroy, erroxy);
 end
 
 function [errox, erroy, erroxy] = CalcErro (fx, fy, fxy, dfx, dfy, d2fxy, Nx, Ny, Ax, Ay, Bx, By)
