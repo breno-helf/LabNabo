@@ -25,8 +25,8 @@ function [dfx, dfy, d2fxy] = aproxdf (Nx, Ny, Ax, Ay, Bx, By, M)
   %% Casos da borda
 
   for j = 1 : Ny
-    dfx(1, j) = (M(i + 1, j) - M(i, j)) / Hx;
-    dfx(Nx, j) = (M(i, j) - M(i - 1, j)) / Hx;
+    dfx(1, j) = (-3*M(1,j) + 4*M(1+1,j) - M(1+2,j))/(2 * Hx);
+    dfx(Nx, j) = (-M(Nx-2,j) + 4*M(Nx-1,j) - 3*M(Nx,j))/(2 * Hx); 
   end
   
   ## Calculating dfy
@@ -41,7 +41,7 @@ function [dfx, dfy, d2fxy] = aproxdf (Nx, Ny, Ax, Ay, Bx, By, M)
   %% Casos da borda
 
   for i = 1 : Nx
-    dfy(i, 1) = (M(i, j + 1) - M(i, j)) / Hy;
+    dfy(i, 1) = 
     dfy(i, Ny) = (M(i, j) - M(i, j - 1)) / Hy;
   end
 
