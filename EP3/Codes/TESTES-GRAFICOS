@@ -1,0 +1,11 @@
+.Criar uma arquivo txt com varios dados: A primeira coluna é a coordenada X, a segunda a coordenada Y, a terceira o valor da função original, a quarta o valor calculado pelo polinômio interpolador e a quinta o valor do erro no ponto (X,Y). Depois basta usar algum programa para Plotar.
+
+.128sin(x) + 128cos(x), PASSO = 0.1, pontos interpolados 5x5 , dominio [0,2]x[0,2]
+DataMain(@(x,y)128*sin(x)+128*cos(y), @(x,y)0, 5, 5, 0, 2, 0, 2)
+
+.255*sin(x), PASSO = 0.1, pontos interpolados 10x10, dominio [0,2]x[0,2]
+DataMain(@(x,y)255*sin(x), 10, 10, 0, 2, 0, 2)
+
+.x^5 + y^5 + xy, PASSO = 0.1, pontos interpolados 10x10, dominio [0,2]x[0,2]
+DataMain(@(x,y)x^5+y^5+x*y, 10, 10, 0, 2, 0, 2)
+

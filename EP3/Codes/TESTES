@@ -1,39 +1,39 @@
 - Teste da função f(x, y) = x^5 + y^3 + (x^2) * y + (y^3) * x
 
-	-Erro das derivadas
-ErroAproxdf(@(x, y)x^5 + y ^ 3 + (x ^ 2) * y + (y ^ 3) * x, @(x, y)5 * x ^ 4 + 2 * x * y + y ^ 3, @(x, y)3 * y ^ 2 + x ^ 2 + 3 * (y ^ 2) * x, @(x, y)2 * x + 3 * y ^ 2, 10, 10, 0, 10, 0, 10)
-ErroAproxdf(@(x, y)x^5 + y ^ 3 + (x ^ 2) * y + (y ^ 3) * x, @(x, y)5 * x ^ 4 + 2 * x * y + y ^ 3, @(x, y)3 * y ^ 2 + x ^ 2 + 3 * (y ^ 2) * x, @(x, y)2 * x + 3 * y ^ 2, 20, 20, 0, 10, 0, 10)
-ErroAproxdf(@(x, y)x^5 + y ^ 3 + (x ^ 2) * y + (y ^ 3) * x, @(x, y)5 * x ^ 4 + 2 * x * y + y ^ 3, @(x, y)3 * y ^ 2 + x ^ 2 + 3 * (y ^ 2) * x, @(x, y)2 * x + 3 * y ^ 2, 40, 40, 0, 10, 0, 10)
-ErroAproxdf(@(x, y)x^5 + y ^ 3 + (x ^ 2) * y + (y ^ 3) * x, @(x, y)5 * x ^ 4 + 2 * x * y + y ^ 3, @(x, y)3 * y ^ 2 + x ^ 2 + 3 * (y ^ 2) * x, @(x, y)2 * x + 3 * y ^ 2, 80, 80, 0, 10, 0, 10)
-ErroAproxdf(@(x, y)x^5 + y ^ 3 + (x ^ 2) * y + (y ^ 3) * x, @(x, y)5 * x ^ 4 + 2 * x * y + y ^ 3, @(x, y)3 * y ^ 2 + x ^ 2 + 3 * (y ^ 2) * x, @(x, y)2 * x + 3 * y ^ 2, 160, 160, 0, 10, 0, 10)
+	-Gerar dados doo Erro das derivadas
+Malha 10x10: ErroAproxdf(@(x, y)x^5 + y ^ 3 + (x ^ 2) * y + (y ^ 3) * x, @(x, y)5 * x ^ 4 + 2 * x * y + y ^ 3, @(x, y)3 * y ^ 2 + x ^ 2 + 3 * (y ^ 2) * x, @(x, y)2 * x + 3 * y ^ 2, 10, 10, 0, 10, 0, 10)
+Malha 20x20: ErroAproxdf(@(x, y)x^5 + y ^ 3 + (x ^ 2) * y + (y ^ 3) * x, @(x, y)5 * x ^ 4 + 2 * x * y + y ^ 3, @(x, y)3 * y ^ 2 + x ^ 2 + 3 * (y ^ 2) * x, @(x, y)2 * x + 3 * y ^ 2, 20, 20, 0, 10, 0, 10)
+Malha 40x40: ErroAproxdf(@(x, y)x^5 + y ^ 3 + (x ^ 2) * y + (y ^ 3) * x, @(x, y)5 * x ^ 4 + 2 * x * y + y ^ 3, @(x, y)3 * y ^ 2 + x ^ 2 + 3 * (y ^ 2) * x, @(x, y)2 * x + 3 * y ^ 2, 40, 40, 0, 10, 0, 10)
+Malha 80x80: ErroAproxdf(@(x, y)x^5 + y ^ 3 + (x ^ 2) * y + (y ^ 3) * x, @(x, y)5 * x ^ 4 + 2 * x * y + y ^ 3, @(x, y)3 * y ^ 2 + x ^ 2 + 3 * (y ^ 2) * x, @(x, y)2 * x + 3 * y ^ 2, 80, 80, 0, 10, 0, 10)
+Malha 160x160: ErroAproxdf(@(x, y)x^5 + y ^ 3 + (x ^ 2) * y + (y ^ 3) * x, @(x, y)5 * x ^ 4 + 2 * x * y + y ^ 3, @(x, y)3 * y ^ 2 + x ^ 2 + 3 * (y ^ 2) * x, @(x, y)2 * x + 3 * y ^ 2, 160, 160, 0, 10, 0, 10)
 
-	-Erro de Interpolação
+	-Gerar dados do Erro de Interpolação
 ExperimentaErro(@(x, y)x^5 + y ^ 3 + (x ^ 2) * y + (y ^ 3) * x, 5, 0, 5, 0, 5)
 
 
-- Teste da função g(x, y) = y * sin(x)
+- Teste da função g(x, y) = y * sin(x) - 
 
-	-Erro das derivadas
-ErroAproxdf(@(x, y)y * sin(x), @(x, y)y * cos(x), @(x, y)sin(x), @(x, y)cos(x), 10, 10, 0, 10, 0, 10)
-ErroAproxdf(@(x, y)y * sin(x), @(x, y)y * cos(x), @(x, y)sin(x), @(x, y)cos(x), 20, 20, 0, 10, 0, 10)
-ErroAproxdf(@(x, y)y * sin(x), @(x, y)y * cos(x), @(x, y)sin(x), @(x, y)cos(x), 40, 40, 0, 10, 0, 10)
-ErroAproxdf(@(x, y)y * sin(x), @(x, y)y * cos(x), @(x, y)sin(x), @(x, y)cos(x), 80, 80, 0, 10, 0, 10)
-ErroAproxdf(@(x, y)y * sin(x), @(x, y)y * cos(x), @(x, y)sin(x), @(x, y)cos(x), 160, 160, 0, 10, 0, 10)
+	-Gerar dados do Erro das derivadas
+Malha 10x10: ErroAproxdf(@(x, y)y * sin(x), @(x, y)y * cos(x), @(x, y)sin(x), @(x, y)cos(x), 10, 10, 0, 10, 0, 10)
+Malha 20x20: ErroAproxdf(@(x, y)y * sin(x), @(x, y)y * cos(x), @(x, y)sin(x), @(x, y)cos(x), 20, 20, 0, 10, 0, 10)
+Malha 40x40: ErroAproxdf(@(x, y)y * sin(x), @(x, y)y * cos(x), @(x, y)sin(x), @(x, y)cos(x), 40, 40, 0, 10, 0, 10)
+Malha 80x80: ErroAproxdf(@(x, y)y * sin(x), @(x, y)y * cos(x), @(x, y)sin(x), @(x, y)cos(x), 80, 80, 0, 10, 0, 10)
+Malha 160x160: ErroAproxdf(@(x, y)y * sin(x), @(x, y)y * cos(x), @(x, y)sin(x), @(x, y)cos(x), 160, 160, 0, 10, 0, 10)
 
-	-Erro de Interpolação
+	-Gerar dados do Erro de Interpolação
 ExperimentaErro(@(x, y)y*sin(x), 5, 0, 5, 0, 5)
 
 
 - Testes da função g(x,y) = exp(x+y)
 
-	-Erro das derivadas
-ErroAproxdf(@(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), 5, 5, 0, 5, 0, 5)
-ErroAproxdf(@(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), 10, 10, 0, 5, 0, 5)
-ErroAproxdf(@(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), 20, 20, 0, 5, 0, 5)
-ErroAproxdf(@(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), 40, 40, 0, 5, 0, 5)
-ErroAproxdf(@(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), 80, 80, 0, 5, 0, 5)
+	-Gerar dados do Erro das derivadas
+Malha 10x10: ErroAproxdf(@(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), 5, 5, 0, 5, 0, 5)
+Malha 20x20: ErroAproxdf(@(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), 10, 10, 0, 5, 0, 5)
+Malha 40x40: ErroAproxdf(@(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), 20, 20, 0, 5, 0, 5)
+Malha 80x80: ErroAproxdf(@(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), 40, 40, 0, 5, 0, 5)
+Malha 160x160: ErroAproxdf(@(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), @(x, y)exp(x+y), 80, 80, 0, 5, 0, 5)
 
-	-Erro de Interpolação
+	-Gerar dados do Erro de Interpolação
 ExperimentaErro(@(x, y)exp(x+y), 5, 0, 5, 0, 5)
 
 

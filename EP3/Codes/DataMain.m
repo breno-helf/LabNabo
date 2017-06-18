@@ -11,17 +11,27 @@ gnulpot.
 
 #}
 
-function DataMain (f, fx, fy, fxy, Nx, Ny, Ax, Bx, Ay, By)
+function DataMain (f, Nx, Ny, Ax, Bx, Ay, By)
 
   Nx++;
   Ny++;
   Hx = (Bx - Ax) / (Nx - 1);
   Hy = (By - Ay) / (Ny - 1);
-  PASSO = 0.1
+  PASSO = 0.1;
   
   M = reshape (1:(Nx * Ny * 4), Nx, Ny, 4);
-
+  A = reshape (1 : (Nx * Ny), Nx, Ny);
+  
   # Monta a matriz de valores a serem passados para a constroiv
+
+  for i = 1 : Nx
+    for j = 1 : Ny		
+      A(i, j) = f(Ax + (i - 1) * Hx, Ay + (j - 1) * Hy);
+    end
+  end
+
+  [dfx, dfy, d2fxy] = aproxdf(Nx, Ny, Ax, Ay, Bx, By, A);
+
   
   for k = 1 : 4
     for i = 1 : Nx
@@ -29,11 +39,11 @@ function DataMain (f, fx, fy, fxy, Nx, Ny, Ax, Bx, Ay, By)
 	if (k == 1)
 	  M(i, j, k) = f(Ax + (i - 1) * Hx, Ay + (j - 1) * Hy);
 	elseif (k == 2)
-	  M(i, j, k) = fx(Ax + (i - 1) * Hx, Ay + (j - 1) * Hy);
+	  M(i, j, k) = dfx(i, j);
 	elseif (k == 3)
-	  M(i, j, k) = fy(Ax + (i - 1) * Hx, Ay + (j - 1) * Hy);
+	  M(i, j, k) = dfy(i, j);
 	elseif (k == 4)
-	  M(i, j, k) = fxy(Ax + (i - 1) * Hx, Ay + (j - 1) * Hy);
+	  M(i, j, k) = d2fxy(i, j);
 	end
       end
     end
@@ -42,6 +52,7 @@ function DataMain (f, fx, fy, fxy, Nx, Ny, Ax, Bx, Ay, By)
   L = constroiv (Nx, Ny, Ax, Ay, Bx, By, M, 0);
   C = constroiv (Nx, Ny, Ax, Ay, Bx, By, M, 1);
 
+  
   Calc(f, L, Nx, Ny, Ax, Ay, Bx, By, 0, PASSO);
   Calc(f, C, Nx, Ny, Ax, Ay, Bx, By, 1, PASSO);
   

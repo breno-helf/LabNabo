@@ -1,0 +1,9 @@
+-255*sin(x) - Dominio de [0,20]x[0,20] - Basta escolher Nx e Ny => numero de pontos na malha de interpolação
+DrawMain(@(x,y)255*sin(x),128,128,Nx,Ny,0,20,0,20)
+
+É possivel que dê um problema com GraphicsMagick, nesse caso, criar imagens com menos pixels, depois criar com mais pixels!
+
+-128sin(x) + 128cos(x), dominio de [0,10]x[0,10]
+DrawMain(@(x,y)128*sin(x) + 128*cos(x),128,128,Nx,Ny,0,10,0,10)
+
+
